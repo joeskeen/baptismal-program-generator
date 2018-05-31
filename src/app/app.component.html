@@ -1,20 +1,89 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<h1>Baptismal Program Generator</h1>
+<p>Please fill in the fields below, then preview and/or save the baptismal program file as a PDF.</p>
+<div>
+  <mat-form-field>
+    <input required placeholder="Baptismal Candidate Name" matInput [(ngModel)]="baptismalCandidateName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Baptism Date" matInput [(ngModel)]="baptismDate" type="date" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Presiding (i.e. Stake President)" matInput [(ngModel)]="presiding" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Conducting (i.e. Ward Mission Leader)" matInput [(ngModel)]="conducting" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Pianist" matInput [(ngModel)]="pianist" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Chorister" matInput [(ngModel)]="chorister" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea required placeholder="Opening Hymn" ea matInput [(ngModel)]="openingHymn">
+    </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Opening Prayer (i.e. Ministering Brother/Sister)" matInput [(ngModel)]="openingPrayer" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Talk - Baptism (i.e. MLS Missionary)" matInput [(ngModel)]="baptismTalk" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Talk - Gift of the Holy Ghost (i.e. Ward Missionary)" matInput [(ngModel)]="holyGhostTalk" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea required placeholder="Musical Selection" ea matInput [(ngModel)]="musicalSelection">
+    </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Baptism Performed By (i.e. Ward Mission Leader)" matInput [(ngModel)]="baptismPerformedBy" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Baptism First Witness (i.e. Stake President)" matInput [(ngModel)]="witness1" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Baptism Second Witness (i.e. Bishop)" matInput [(ngModel)]="witness2" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Missionary Presentation Title (i.e. &quot;The Gospel of Christ&quot;)" matInput [(ngModel)]="missionaryPresentation" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Missionary (Senior Companion)" matInput [(ngModel)]="missionary1" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Missionary (Junior Companion)" matInput [(ngModel)]="missionary2" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Testimony (Bishop)" matInput [(ngModel)]="testimony1" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Testimony (Stake President)" matInput [(ngModel)]="testimony2" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea required placeholder="Closing Hymn" ea matInput [(ngModel)]="closingHymn">
+      </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Closing Prayer (i.e. Ward Executive Secretary)" matInput [(ngModel)]="closingPrayer" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Confirmation Date" matInput [(ngModel)]="confirmationDate" type="date" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Confirmation Time" matInput [(ngModel)]="confirmationTime" type="time" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Confirmation Location" matInput [(ngModel)]="confirmationAddress" />
+  </mat-form-field>
+  <mat-form-field>
+    <input required placeholder="Confirmation Performed By" matInput [(ngModel)]="confirmationPerformedBy" />
+  </mat-form-field>
+  <div class="button-row">
+    <button mat-raised-button (click)="renderPdf()">Preview PDF</button>
+    <button mat-raised-button color="primary" (click)="savePdf()">Save PDF</button>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div [class.hidden]="!pdf">
+  <canvas #pdfOutputCanvas></canvas>
+</div>
