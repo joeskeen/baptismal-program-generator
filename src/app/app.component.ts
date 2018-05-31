@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, Inject } from '@angular/core';
 import { JsPdfFactory, JsPdf } from './lib/jspdf.library';
 import { PDFJS_TOKEN, PDFJSStatic, PDFJS } from './lib/pdfjs.library';
 import { Moment, MOMENT_TOKEN } from './lib/moment.library';
+// TODO: use DI for this
 import * as html2canvas from 'html2canvas';
 
 @Component({
